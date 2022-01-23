@@ -12,50 +12,30 @@ function SideBarMenu({
 	item4,
 	active,
 }) {
-	return Icon4 ? (
-		<>
-			<Menu>
-				<Title>{title}</Title>
-				<List>
-					<ListItem className={active}>
-						<Icon1 className="icon" />
-						{item1}
-					</ListItem>
-					<ListItem>
-						<Icon2 className="icon" />
-						{item2}
-					</ListItem>
-					<ListItem>
-						<Icon3 className="icon" />
-						{item3}
-					</ListItem>
+	return (
+		<Menu>
+			<Title>{title}</Title>
+			<List>
+				<ListItem className={active}>
+					<Icon1 className="icon" />
+					{item1}
+				</ListItem>
+				<ListItem>
+					<Icon2 className="icon" />
+					{item2}
+				</ListItem>
+				<ListItem>
+					<Icon3 className="icon" />
+					{item3}
+				</ListItem>
+				{Icon4 && (
 					<ListItem>
 						<Icon4 className="icon" />
 						{item4}
 					</ListItem>
-				</List>
-			</Menu>
-		</>
-	) : (
-		<>
-			<Menu>
-				<Title>{title}</Title>
-				<List>
-					<ListItem className={active}>
-						<Icon1 className="icon" />
-						{item1}
-					</ListItem>
-					<ListItem>
-						<Icon2 className="icon" />
-						{item2}
-					</ListItem>
-					<ListItem>
-						<Icon3 className="icon" />
-						{item3}
-					</ListItem>
-				</List>
-			</Menu>
-		</>
+				)}
+			</List>
+		</Menu>
 	);
 }
 
