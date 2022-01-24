@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { userData } from "../../data";
-import Chart from "../Chart";
-import FeaturedInfo from "../FeaturedInfo";
-import LargeWidget from "../LargeWidgets";
-import SmallWidget from "../SmallWidget";
+import { userData } from "../data";
+import Chart from "../components/Chart";
+import FeaturedInfo from "../components/FeaturedInfo";
+import LargeWidget from "../components/LargeWidgets";
+import SmallWidget from "../components/SmallWidget";
 
 function Home() {
 	return (
