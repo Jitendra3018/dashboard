@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function SideBarMenu({
 	title,
@@ -16,14 +17,39 @@ function SideBarMenu({
 		<Menu>
 			<Title>{title}</Title>
 			<List>
-				<ListItem className={active}>
-					<Icon1 className="icon" />
-					{item1}
-				</ListItem>
-				<ListItem>
-					<Icon2 className="icon" />
-					{item2}
-				</ListItem>
+				{item1 === "Home" ? (
+					<Link to="/" className="link">
+						<ListItem className={active}>
+							<Icon1 className="icon" />
+							{item1}
+						</ListItem>
+					</Link>
+				) : item1 === "Users" ? (
+					<Link to="/users" className="link">
+						<ListItem className={active}>
+							<Icon1 className="icon" />
+							{item1}
+						</ListItem>
+					</Link>
+				) : (
+					<ListItem>
+						<Icon1 className="icon" />
+						{item1}
+					</ListItem>
+				)}
+				{item2 === "Products" ? (
+					<Link to="/products" className="link">
+						<ListItem>
+							<Icon2 className="icon" />
+							{item2}
+						</ListItem>
+					</Link>
+				) : (
+					<ListItem>
+						<Icon2 className="icon" />
+						{item2}
+					</ListItem>
+				)}
 				<ListItem>
 					<Icon3 className="icon" />
 					{item3}
@@ -53,6 +79,11 @@ const Title = styled.h3`
 const List = styled.ul`
 	list-style: none;
 	padding: 5px;
+
+	& > .link {
+		text-decoration: none;
+		color: inherit;
+	}
 `;
 
 const ListItem = styled.li`

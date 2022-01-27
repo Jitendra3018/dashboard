@@ -1,4 +1,5 @@
 import { Language, NotificationsNone, Settings } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function TopBar() {
@@ -6,7 +7,9 @@ function TopBar() {
 		<Container>
 			<Wrapper>
 				<TopLeft>
-					<Logo>Admin</Logo>
+					<Link to="/" className="link">
+						<Logo>Admin</Logo>
+					</Link>
 				</TopLeft>
 				<TopRight>
 					<IconContainer>
@@ -50,7 +53,12 @@ const Wrapper = styled.div`
 	justify-content: space-between;
 `;
 
-const TopLeft = styled.div``;
+const TopLeft = styled.div`
+	& > .link {
+		text-decoration: none;
+		color: inherit;
+	}
+`;
 
 const Logo = styled.span`
 	font-weight: bold;
